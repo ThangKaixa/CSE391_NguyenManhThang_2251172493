@@ -70,3 +70,30 @@
 - Kết quả: Form không submit được
 - Lý do: + Mật khẩu chỉ có 3 ký tự
          + minlength="8" yêu cầu tối thiểu 8 ký tự
+
+### Câu A3 - Accessibility
+1. Screen reader sẽ đọc label để người khiếm thị biết ô input dùng để nhập gì.
+- Ví dụ: 
+```html
+ <label for="email">Email</label>
+ <input type="email" id="email">
+```
+- Khi focus vào input screen reader đọc: “Email, edit text”.
+- Click vào label cũng focus được input, tăng usability trên mobile.
+2. Dùng khi nhóm nhiều input liên quan
+- Ví dụ: + Chọn phương thức thanh toán
+         + Thông tin giới tính
+```html
+<fieldset>
+    <legend>Phương thức thanh toán</legend>
+
+    <input type="radio" name="pay"> Tiền mặt
+    <input type="radio" name="pay"> Thẻ ngân hàng
+</fieldset>
+```
+legend giúp screen reader hiểu nhóm input này thuộc cùng một chủ đề.
+3. Dùng khi không có text label hiển thị.
+- Không dùng khi:
++ Semantic HTML tự nhiên luôn tốt hơn
++ <label> hỗ trợ accessibility + usability tốt hơn
++ aria-label chỉ nên là giải pháp bổ sung
